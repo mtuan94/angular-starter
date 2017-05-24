@@ -1,0 +1,42 @@
+.list{
+  width: 100%;
+}
+
+.list-item{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+    padding: 0;
+    border-color: rgba(0,0,0,.06);
+}
+.list-item:hover{
+    background-color: rgba(113, 112, 112, 0.08);
+}
+
+.user-avatar{
+    border-radius: 5px;
+    width: 40px;
+    margin: auto 5px;
+    height: 40px;
+}
+.user-name{
+  color: rgba(0,0,0,.54);
+  padding-left: 15px;
+}
+
+.point-action{
+  padding-left: 300px;
+}
+
+.icon-action{
+    width: 15px;
+    height: 15px;
+}
+.user-point{
+  color: rgba(59, 98, 103, 0.77);
+}
+.action-link{
+  margin: auto 10px;
+  padding-bottom: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,57 @@
+.clone-bar{
+      width: 30%;
+      float: left;
+      height: 1000px;
+    }
+    .task-bar{
+      width: 70%;
+      float: right;
+    }
+    .example-card{
+      margin-bottom: 20px;
+    }
+    .list-task-clone{
+      overflow:hidden; 
+      overflow-y:scroll;
+      max-height: 50px;
+    }
+    .list-task-clone li{
+      display: inline;
+    }
+    a{
+      cursor: pointer;  
+    } 
+.processing-task{
+  max-width: 450px;
+}
+
+.list-item{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+    padding: 0;
+    border-color: rgba(0,0,0,.06);
+}
+.list-item:hover{
+    background-color: rgba(113, 112, 112, 0.08);
+}
+
+.icon-man{
+  width: 15px;
+  margin-top: -4px;
+}
+
+.task *{
+  float: left;
+}
+.task-status{
+  padding-left: 20px;
+}
+.creator-avatar{
+    width: 45px;
+    border-radius: 50%;
+    margin-top: -13px;
+}
+.post-title{
+    margin-top: -10px;
+}

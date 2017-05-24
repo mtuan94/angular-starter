@@ -1,0 +1,73 @@
+<h1>Statistic Charts</h1>
+<span>
+</span>
+<form (ngSubmit)="submitQuery()" autocomplete="off" >
+
+  <input type="date" id="lowerDate" [(ngModel)]="lowerDate" [ngModelOptions]="{standalone: true}">
+  <input type="date" id="higherDate" [(ngModel)]="higherDate" [ngModelOptions]="{standalone: true}">
+
+  <button md-button>Submit Value</button>
+</form>
+
+<span *ngIf="numberUserLogin">
+  <p>Tổng số Account đăng ký mới : {{numberUserLogin}}</p>
+</span>
+
+<span *ngIf="numberCreatedPosts">
+  <p>Tổng số Bài viết được tạo mới : {{numberCreatedPosts}}</p> 
+</span>
+
+<span *ngIf="numberCreatedComments">
+  <p>Tổng số Bình luận được tạo mới : {{numberCreatedComments}}</p> 
+</span>
+
+<span>
+  <div *ngIf="numberVotePost && numberVotePost.all && numberVotePost.upvote && numberVotePost.downvote">
+    <p>Tổng số Vote post : {{numberVotePost.all.overall}}</p> 
+    <p>Tổng số upvote : {{numberVotePost.upvote.overall}}</p> 
+    <p>Tổng số downvote : {{numberVotePost.downvote.overall}}</p> 
+  </div>
+
+  <div *ngIf="numberVoteComment && numberVoteComment.all && numberVoteComment.upvote && numberVoteComment.downvote">
+    <p>Tổng số Vote comment : {{numberVoteComment.all.overall}}</p> 
+    <p>Tổng số upvote comment: {{numberVoteComment.upvote.overall}}</p> 
+    <p>Tổng số downvote comment: {{numberVoteComment.downvote.overall}}</p> 
+  </div>
+</span>
+
+<div style="display: block; width: 600px; height: 300px;">
+    <canvas baseChart width="600px" height="300px"
+                [datasets]="ChartData"
+                [labels]="ChartLabels"
+                [options]="lineChartOptions"
+                [colors]="ChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="'bar'"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div> 
+
+  <span *ngIf="numberActiveUser">
+    <p>Tổng số người dùng active : {{numberActiveUser}}</p> 
+  </span>
+
+  <span *ngIf="numberUserComment">
+    <p>Tổng số người dùng comment : {{numberUserComment}}</p> 
+  </span>
+
+  <span *ngIf="numberUserWritePost">
+    <p>Tổng số người dùng viết bài : {{numberUserWritePost}}</p> 
+  </span>
+
+  <div style="display: block; width: 600px; height: 300px;">
+      <canvas baseChart width="600px" height="300px"
+                  [datasets]="behaviorChartData"
+                  [labels]="behaviorChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="behaviorChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="'bar'"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+    </div> 
+<router-outlet></router-outlet>

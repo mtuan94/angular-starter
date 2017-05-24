@@ -1,0 +1,17 @@
+<div id="header">
+  <button md-icon-button [mdMenuTriggerFor]="menu" class="menu">
+    <md-icon svgIcon="menu" class="menu-icon"></md-icon>
+  </button>
+  <md-menu #menu="mdMenu">
+    <button *ngIf="!user" md-button (click)="openDialog()">Login</button>
+    <button *ngIf="user" md-button (click)="logout()">Logout</button>
+    
+  </md-menu>
+  <div *ngIf="user">
+    <img class="avatar" alt="profile picture" src="https://s3-ap-southeast-1.amazonaws.com/img.spiderum.com/sp-xs-avatar/{{user.avatar}}">
+    <p class="user-name">
+      {{user.name}}
+    </p>
+    
+  </div>
+</div>

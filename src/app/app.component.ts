@@ -18,44 +18,54 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.component.css'
   ],
+  // templateUrl: './app.component.html'
   template: `
-    <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
-      </a>
-      <a [routerLink]=" ['./detail'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        About
-      </a>
-    </nav>
 
-    <main>
-      <router-outlet></router-outlet>
-    </main>
 
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+  <md-grid-list class="header" cols="1" rowHeight="53px">
+    <header></header>
+  </md-grid-list>
+  <md-grid-list class="body" cols="4" rowHeight="100%">
+    <md-grid-tile colspan="1" rowspan="1" class="nav-bar">
 
-    <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
-    </footer>
+
+      <md-grid-list class="navbar" cols="1" rowHeight="47px">
+        <md-grid-tile colspan="1" rowspan="1" class="nav-item">
+          <a [routerLink]=" ['./'] "
+            routerLinkActive="link-active" [routerLinkActiveOptions]= "{exact: true}">
+            About
+          </a>
+        </md-grid-tile>
+
+        <md-grid-tile colspan="1" rowspan="1" class="nav-item">
+          <a [routerLink]=" ['./statistic'] "
+            routerLinkActive="link-active" [routerLinkActiveOptions]= "{exact: true}">
+            Statistic charts
+          </a>
+        </md-grid-tile>
+
+        <md-grid-tile colspan="1" rowspan="1" class="nav-item">
+          <a [routerLink]=" ['./top-user'] "
+            routerLinkActive="link-active" [routerLinkActiveOptions]= "{exact: true}">
+            Top user list
+          </a>
+        </md-grid-tile>
+
+        <md-grid-tile colspan="1" rowspan="1" class="nav-item">
+          <a [routerLink]=" ['./auto-vote'] "
+            routerLinkActive="link-active" [routerLinkActiveOptions]= "{exact: true}">
+            Auto vote tool
+          </a>
+        </md-grid-tile>
+      </md-grid-list>
+
+    </md-grid-tile>
+    <md-grid-tile colspan="3" rowspan="1" class="content-bar">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </md-grid-tile>
+  </md-grid-list>
   `
 })
 export class AppComponent implements OnInit {

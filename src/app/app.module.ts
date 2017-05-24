@@ -14,23 +14,35 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule, 
+  MdGridListModule, MdGridTile, MdDialogModule, 
+  MdInputModule, MdIconModule, MdMenuModule} from '@angular/material';
+import { HeaderModule } from './header/header.module';
+import { AutoVoteModule } from './autoVote/autoVote.module';
 /*
  * Platform and Environment providers/directives/pipes
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
+
+import { JwtHelper } from 'angular2-jwt';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+import { TopUserComponent } from './topUser';
+import { StatisticComponent } from './statistic';
+import { AutoVoteComponent } from './autoVote';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-
+import { ChartsModule } from 'ng2-charts';
 import '../styles/styles.scss';
 import '../styles/headings.css';
+
+import '../../node_modules/chart.js/src/chart.js'
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -52,7 +64,10 @@ type StoreType = {
   declarations: [
     AppComponent,
     AboutComponent,
+    TopUserComponent,
+    // AutoVoteComponent,
     HomeComponent,
+    StatisticComponent,
     NoContentComponent,
     XLargeDirective
   ],
@@ -61,8 +76,18 @@ type StoreType = {
    */
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+     MdButtonModule, 
+    MdCheckboxModule,
+    MdDialogModule,
+    MdInputModule,
+    MdGridListModule,
+    MdIconModule,
+    HeaderModule,
+    AutoVoteModule,
     FormsModule,
     HttpModule,
+    ChartsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**
@@ -70,7 +95,8 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    JwtHelper
   ]
 })
 export class AppModule {

@@ -10,9 +10,7 @@ console.log('`Detail` bundle loaded asynchronously');
 
 @NgModule({
   declarations: [
-    /**
-     * Components / Directives/ Pipes
-     */
+    // Components / Directives/ Pipes
     DetailComponent,
   ],
   imports: [

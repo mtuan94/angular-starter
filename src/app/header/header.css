@@ -1,0 +1,25 @@
+#header{
+  float: right;
+  width: 200px;
+}
+
+.avatar{
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  padding-top: 8px;
+}
+
+.user-name{
+  float: left;
+  padding-left: 10px;
+  color: #fff;
+}
+
+.menu-icon{
+  height: 50px;
+  width: 40px;
+}
+.menu{
+  float: right;
+}

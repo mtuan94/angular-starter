@@ -1,0 +1,115 @@
+<h1> Spiderum auto upvote tool</h1>
+<div class="auto-vote">
+  <div class="clone-bar">
+    <button md-button (click)="submitLogin()">Load from local</button>
+    <div class="list-clone">
+
+      <md-grid-list class="list" cols="1" rowHeight="30px" *ngIf="addedClones && addedClones.length > 0">
+        <md-grid-tile class="list-item"
+            *ngFor="let user of addedClones"
+            [colspan]="1"
+            [rowspan]="1">
+            
+          {{ user.name }}
+          
+        </md-grid-tile>
+      </md-grid-list>
+      <button md-button (click)="openDialog()">
+        <md-icon svgIcon="user" class="icon-action"></md-icon>
+      </button>
+      
+      <button md-button (click)="submitLogin()">Save to local</button>
+      <!--<ul class="user-list " *ngIf="addedClones && addedClones.length > 0">
+        <li class="clearfix" *ngFor="let user of addedClones">
+          <a>
+            {{ user.name }}
+          </a>
+        </li>
+      </ul>-->
+    </div>
+    <!--<div class="add-clone">
+      add clone here
+      <form autocomplete="off" >
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><md-input-container class="example-full-width">
+            <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" mdInput placeholder="Username">
+          </md-input-container></td>
+        </tr></table>
+
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><md-input-container class="example-full-width">
+            <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" mdInput placeholder="Password">
+          </md-input-container></td>
+        </tr></table>
+
+        <button md-button (click)="submitLogin()">Login</button>
+
+
+
+      </form>
+    </div>-->
+  </div>
+  <div class="task-bar">
+    <div class="processing-task">
+      <md-icon svgIcon="task" class="icon-action" (click)="openAddTask()"></md-icon>
+
+
+
+
+      <div class="task-item" *ngIf="arrayTasks && arrayTasks.length">
+        <md-card class="example-card" *ngFor="let task of arrayTasks" >
+          <md-card-header>
+            <div md-card-avatar class="example-header-image">
+              <img class="creator-avatar" *ngIf="!task.postData.creator_id.avatar" src="https://www.gravatar.com/avatar/{{task.postData.creator_id.gravatar}}?d=wavatar&f=y" alt='profile picture' />
+              <img class="creator-avatar" *ngIf="task.postData.creator_id.avatar" src="https://s3-ap-southeast-1.amazonaws.com/img.spiderum.com/sp-xs-avatar/{{ task.postData.creator_id.avatar }}" alt='profile picture' />
+            </div>
+            <div class="post-title">
+              <md-card-title>{{task.postData.title}}</md-card-title>
+              <md-card-subtitle>{{task.postData.creator_id.name}}</md-card-subtitle>
+            </div>
+          </md-card-header>
+          <img md-card-image src="https://s3-ap-southeast-1.amazonaws.com/img.spiderum.com/sp-thumbnails/{{task.postData.thumbnail}}">
+          <md-card-content class="task">
+            <div class="number-clone">
+              {{task.arrayClone.length}}
+              <md-icon svgIcon="clone" class="icon-man"></md-icon>
+            </div>
+            <div class="task-status">
+              {{task.success}} success
+              {{task.fallue}} fallue
+            </div>
+          </md-card-content>
+        </md-card>
+
+
+        <!--<h3> {{task.postTitle}} </h3>
+        <div>
+          list clone use to vote
+          <ul class="list-task-clone">
+            <li *ngFor="let clone of task.arrayClone">
+              {{clone.name}}
+            </li>
+          </ul>
+        </div>-->
+        
+      </div>
+
+
+
+
+    </div>
+    <!--<div class="create-task">
+      this is create task panel
+      <div class="seleted-clone">
+        <ul class="user-list " *ngIf="seletedClone && seletedClone.length > 0">
+          <li class="clearfix" *ngFor="let user of seletedClone">
+            <p>
+              {{ user.name }}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>-->
+  </div>
+</div>

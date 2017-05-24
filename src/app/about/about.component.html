@@ -1,0 +1,23 @@
+<h1>Login Spiderum admin site</h1>
+<div *ngIf="!user">
+  <form (ngSubmit)="submitLogin()" autocomplete="off" >
+    <p> User Name: </p>
+    <input type="text" id="username" [(ngModel)]="username" value="2014-02-09" [ngModelOptions]="{standalone: true}">
+    <p> Password: </p>
+    <input type="password" id="password" [(ngModel)]="password" value="2014-02-09" [ngModelOptions]="{standalone: true}">
+
+    <button>Submit Value</button>
+  </form>
+</div>
+<div *ngIf="user">
+  <p>
+    {{user.name}}
+  </p>
+  <img alt="profile picture" src="https://s3-ap-southeast-1.amazonaws.com/img.spiderum.com/sp-xs-avatar/{{user.avatar}}">
+</div>
+<div>
+  <h3>
+    patrick@AngularClass.com
+  </h3>
+</div>
+<pre>this.localState = {{ localState | json }}</pre>

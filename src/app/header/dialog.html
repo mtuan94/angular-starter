@@ -1,0 +1,21 @@
+<h1 md-dialog-title>Login</h1>
+<div md-dialog-content>Hello admin đẹp trai</div>
+<div md-dialog-actions>
+  <form>
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><md-input-container class="example-full-width">
+        <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" mdInput placeholder="Username">
+      </md-input-container></td>
+    </tr></table>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><md-input-container class="example-full-width">
+        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" mdInput placeholder="Password">
+      </md-input-container></td>
+    </tr></table>
+
+    <button md-button (click)="dialogRef.close(null)">Cancel</button>
+    <button md-button (click)="submitLogin()">Login</button>
+    
+  </form>
+</div>
