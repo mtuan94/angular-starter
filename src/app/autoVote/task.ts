@@ -10,5 +10,4 @@ export interface Task{
   couter?: number;
   success?: number;
   fallue?: number;
-
 }

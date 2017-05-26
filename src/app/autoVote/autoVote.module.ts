@@ -9,7 +9,7 @@ import { DialogComponent, DialogAddTaskComponent } from './autoVote.component'
 import {MdButtonModule, MdCheckboxModule,
    MdGridListModule, MdGridTile, MdDialogModule, 
    MdInputModule, MdMenuModule, MdIconModule, 
-   MdSlideToggleModule, MdCardModule} from '@angular/material';
+   MdSlideToggleModule, MdCardModule, MdProgressBarModule} from '@angular/material';
 @NgModule({
   declarations: [ 
   	AutoVoteComponent,
@@ -26,7 +26,8 @@ import {MdButtonModule, MdCheckboxModule,
     MdInputModule,
     MdIconModule,
     MdSlideToggleModule,
-    MdCardModule
+    MdCardModule,
+    MdProgressBarModule
   ],
   entryComponents: [ 
     DialogComponent,
